@@ -1,0 +1,18 @@
+#loader {
+  width: 5rem;
+  height: 5rem;
+}
+
+.card {
+  width: 320px;
+  height: 320px;
+}
+
+.edit-meme, .delete-meme {
+  cursor: pointer;
+}
+
+.social-icons a{
+  margin-left: 2px;
+  margin-right: 2px;
+}

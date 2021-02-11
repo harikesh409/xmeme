@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>XMeme - Harikesh</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">XMeme</a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav ms-auto">            
+            <li class="nav-item">
+              <a href="https://harikesh-xmeme.herokuapp.com/swagger-ui/" target="_blank" class="nav-link">
+                Swagger <i class="fas fa-external-link-alt"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="mailto:p.harikesh409@gmail.com" class="nav-link">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+  </header>
+
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-secondary mt-5" id="loader" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="row my-3">
+        <div class="col-md-6">
+          <h2>X Meme</h2>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <button type="button" class="btn btn-secondary" data-mdb-ripple-color="#dbb8ff" data-mdb-toggle="modal"
+            data-mdb-target="#memeModal"> Create Meme </button>
+        </div>
+      </div>
+      <div class="memes-content">
+        <div class="row">
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Meme Modal -->
+    <div class="modal top fade" id="memeModal" tabindex="-1" aria-labelledby="memeModalLabel" aria-hidden="true"
+      data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="memeModalLabel">Create Meme</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="addMeme" class="needs-validation" novalidate>
+            <div class="modal-body">
+              <div class="form-outline mb-4">
+                <input type="text" id="name" name="name" class="form-control" required />
+                <label class="form-label" for="name">Meme Owner <small class="text-danger">*</small></label>
+                <div class="invalid-feedback">Please provide a valid name.</div>
+              </div>
+              <div class="form-outline mb-4">
+                <textarea class="form-control" name="caption" id="caption" rows="4" required></textarea>
+                <label class="form-label" for="caption">Caption <small class="text-danger">*</small></label>
+                <div class="invalid-feedback">Please provide a valid caption.</div>
+              </div>
+              <div class="form-outline">
+                <input type="url" id="memeUrl" name="url" class="form-control" required />
+                <label class="form-label" for="memeUrl">Meme URL <small class="text-danger">*</small></label>
+                <div class="invalid-feedback">Please provide a valid URL.</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" data-mdb-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-secondary" id="add-btn">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Create Meme Modal End-->
+
+    <!-- Update Meme Modal-->
+    <div class="modal top fade" id="updateMemeModal" tabindex="-1" aria-labelledby="updateMemeModalLabel"
+      aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateMemeModalLabel">Update Meme</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="updateMeme" class="needs-validation" novalidate>
+            <div class="modal-body">
+              <input type="hidden" name="id" id="edit-id">
+              <div class="mb-4">
+                Meme Added By: <span id="edit-name"></span>
+              </div>
+              <div class="form-outline mb-4">
+                <textarea class="form-control" name="caption" id="edit-caption" rows="4" required></textarea>
+                <label class="form-label" for="caption">Caption <small class="text-danger">*</small></label>
+                <div class="invalid-feedback">Please provide a valid caption.</div>
+              </div>
+              <div class="form-outline">
+                <input type="url" id="edit-memeUrl" name="url" class="form-control" required />
+                <label class="form-label" for="memeUrl">Meme URL <small class="text-danger">*</small></label>
+                <div class="invalid-feedback">Please provide a valid URL.</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" data-mdb-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-secondary">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-center text-lg-start mt-auto">
+    <div class="text-left p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      &copy; <script>document.write(new Date().getFullYear())</script> Copyright: XMeme by
+      <a class="text-white" href="https://harikesh409.github.io/" target="_blank">Harikesh</a>
+      <span class="float-end social-icons">
+        <a href="https://in.linkedin.com/in/harikesh409" target="_blank">
+          <i class="fab fa-2x fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/harikesh409" target="_blank">
+          <i class="fab fa-2x fa-github-square"></i>
+        </a>
+      </span>
+    </div>
+
+  </footer>
+
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+  <script type="text/javascript">
+    (() => {
+      'use strict';
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation');
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms).forEach((form) => {
+        form.addEventListener('submit', (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+  <script src="js/util.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
