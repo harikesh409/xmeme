@@ -34,24 +34,24 @@ cd p-harikesh409-me_buildout_xmeme/backend/XMeme/
 4. By default it will run on port 8081.
 
 ### Endpoints
-1. Get all Memes - GET Method
-The pagenumber and pagesize parameters are optional.
+1. Get all Memes - GET Method <br>
+The pagenumber and pagesize parameters are optional.<br>
 [http://localhost:8081/memes?pageNumber=0&pageSize=100](http://localhost:8081/memes?pageNumber=0&pageSize=100 "http://localhost:8081/memes?pageNumber=0&pageSize=100")
-CURL example:
+<br>CURL example:
 ```bash
 curl --location --request GET 'http://localhost:8081/memes'
 ```
-2. Get Meme by ID - GET Method
-Pass the meme id in the url.
+2. Get Meme by ID - GET Method <br>
+Pass the meme id in the url.<br>
 [http://localhost:8081/memes/id](http://localhost:8081/memes/id "http://localhost:8081/memes/id")
-CURL example:
+<br>CURL example:
 ```bash
 curl --location --request GET 'http://localhost:8081/memes/1'
 ```
-3. Add Meme - POST Method
-Pass name, url, and caption on request body as json.
+3. Add Meme - POST Method<br>
+Pass name, url, and caption on request body as json.<br>
 [http://localhost:8081/memes](http://localhost:8081/memes "http://localhost:8081/memes")
-CURL example:
+<br>CURL example:
 ```bash
 curl --location --request POST 'http://localhost:8081/memes' \
 --header 'Content-Type: application/json' \
@@ -59,12 +59,12 @@ curl --location --request POST 'http://localhost:8081/memes' \
 "name": "xyz",
 "url": "https://ichef.bbci.co.uk/images/ic/704xn/p072ms6r.jpg",
 "caption": "This is a meme"
-}'```
-
-4. Update Meme - PATCH Method
-Pass meme id in the url and caption, url in request body as json.
+}'
+```
+4. Update Meme - PATCH Method<br>
+Pass meme id in the url and caption, url in request body as json.<br>
 [http://localhost:8081/memes/id](http://localhost:8081/memes/id "http://localhost:8081/memes/id")
-CURL example:
+<br>CURL example:
 ```bash
 curl --location --request PATCH 'http://localhost:8081/memes/1' \
 --header 'Content-Type: application/json' \
@@ -73,13 +73,14 @@ curl --location --request PATCH 'http://localhost:8081/memes/1' \
 	"url":"https://www.exterro.com/images/uploads/blogPosts/_1200x630_crop_center-center_82_none/Monkey-Puppet-Meme-LinkedIn.png?mtime=1601676585"
 }'
 ```
-5. Delete Meme - DELETE Method
+5. Delete Meme - DELETE Method<br>
+Pass meme id in the url.<br>
 [http://localhost:8081/memes/id](http://localhost:8081/memes/id "http://localhost:8081/memes/id")
-CURL example:
+<br>CURL example:
 ```bash
 curl --location --request DELETE 'http://localhost:8081/memes/1'
 ```
-6. Swagger UI
+6. Swagger UI<br>
 [http://localhost:8081/swagger-ui/](http://localhost:8081/swagger-ui/ "http://localhost:8081/swagger-ui/")
 
 ## Running FrontEnd
