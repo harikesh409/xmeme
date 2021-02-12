@@ -10,6 +10,7 @@ Meme Stream Page where users can post memes by providing their name, a caption f
 - Bootstrap 5
 - Material UI
 ### Back End
+- MySQL
 - Java 8
 - Spring Boot v2.4.2
 - Hibernate
