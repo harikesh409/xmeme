@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  xmeme-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    restart: always
+    depends_on: # Start the depends_on first
+      - mysql 
+    environment:
+      RDS_HOSTNAME: mysql
+      RDS_PORT: 3306
+      RDS_DB_NAME: xmeme
+      RDS_USERNAME: harikesh
+      RDS_PASSWORD: harikesh
+    networks:
+      - xmeme-web-application-network
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: harikesh
+      MYSQL_PASSWORD: harikesh
+      MYSQL_DATABASE: xmeme
+    volumes:
+      - mysql-database-data-volume:/var/lib/mysql
+    networks:
+      - xmeme-web-application-network  
+  
+# Volumes
+volumes:
+  mysql-database-data-volume:
+
+networks:
+  xmeme-web-application-network:
