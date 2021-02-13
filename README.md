@@ -3,6 +3,7 @@
 
 Meme Stream Page where users can post memes by providing their name, a caption for the meme and the URL for the meme image as input.
 ## Technology Stack
+[![Tech Stack](techstack.png "Tech Stack")](techstack.png "Tech Stack")
 ### Front End
 - HTML
 - CSS
@@ -23,16 +24,20 @@ Meme Stream Page where users can post memes by providing their name, a caption f
 - [Maven](http://https://maven.apache.org/download.cgi "Maven")
 - [VS Code](https://code.visualstudio.com/download "VS Code") or any Preffered IDE
 - [Eclipse](https://www.eclipse.org/downloads/ "Eclipse") or any other Java supported IDE
+- [MySQL](https://www.mysql.com/downloads/ "MySQL") Database
 ## Running Backend
 1.  First clone the repository using the following command:
-```git clone git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/p-harikesh409-me_buildout_xmeme.git```
+```bash
+git clone git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/p-harikesh409-me_buildout_xmeme.git```
 2. Change the current directory to the backend directory of the clone repo.
 ```bash
 cd p-harikesh409-me_buildout_xmeme/backend/XMeme/
 ```
 3. Run the backend server using maven.
 ```mvnw spring-boot:run```
-4. By default it will run on port 8081.
+4.  Running using docker-compose.
+```docker-compose up -d```
+5. By default it will run on port 8081.
 
 ### Endpoints
 1. Get all Memes - GET Method <br>
@@ -62,7 +67,7 @@ curl --location --request POST 'http://localhost:8081/memes' \
 "caption": "This is a meme"
 }'
 ```
-4. Update Meme - PATCH Method<br>
+4. Update a Meme by ID - PATCH Method<br>
 Pass meme id in the url and caption, url in request body as json.<br>
 [http://localhost:8081/memes/id](http://localhost:8081/memes/id "http://localhost:8081/memes/id")
 <br>CURL example:
@@ -71,10 +76,10 @@ curl --location --request PATCH 'http://localhost:8081/memes/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"caption":"updated caption",
-	"url":"https://www.exterro.com/images/uploads/blogPosts/_1200x630_crop_center-center_82_none/Monkey-Puppet-Meme-LinkedIn.png?mtime=1601676585"
+	"url":"https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg"
 }'
 ```
-5. Delete Meme - DELETE Method<br>
+5. Delete a Meme by ID - DELETE Method<br>
 Pass meme id in the url.<br>
 [http://localhost:8081/memes/id](http://localhost:8081/memes/id "http://localhost:8081/memes/id")
 <br>CURL example:
