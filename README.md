@@ -28,7 +28,8 @@ Meme Stream Page where users can post memes by providing their name, a caption f
 ## Running Backend
 1.  First clone the repository using the following command:
 ```bash
-git clone git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/p-harikesh409-me_buildout_xmeme.git```
+git clone git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/p-harikesh409-me_buildout_xmeme.git
+```
 2. Change the current directory to the backend directory of the clone repo.
 ```bash
 cd p-harikesh409-me_buildout_xmeme/backend/XMeme/
@@ -37,7 +38,7 @@ cd p-harikesh409-me_buildout_xmeme/backend/XMeme/
 ```mvnw spring-boot:run```
 4.  Running using docker-compose.
 ```docker-compose up -d```
-5. By default it will run on port 8081.
+5. By default the application will run on port 8081.
 
 ### Endpoints
 1. Get all Memes - GET Method <br>
