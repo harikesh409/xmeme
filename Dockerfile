@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:8.0.23
 ENV MYSQL_DATABASE xmeme
 ENV MYSQL_USER harikesh
 ENV MYSQL_PASSWORD harikesh
