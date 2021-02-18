@@ -28,11 +28,11 @@ Meme Stream Page where users can post memes by providing their name, a caption f
 ## Running Backend
 1.  First clone the repository using the following command:
 ```bash
-git clone git@gitlab.crio.do:COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/p-harikesh409-me_buildout_xmeme.git
+git clone https://github.com/harikesh409/xmeme.git
 ```
 2. Change the current directory to the backend directory of the clone repo.
 ```bash
-cd p-harikesh409-me_buildout_xmeme/backend/XMeme/
+cd xmeme/backend/XMeme/
 ```
 3. Run the backend server using maven.
 ```mvnw spring-boot:run```
