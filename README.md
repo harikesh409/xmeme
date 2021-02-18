@@ -1,4 +1,5 @@
 # XMeme
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b85b0b45ad2345f881be5b1d9df5d13e)](https://app.codacy.com/gh/harikesh409/xmeme?utm_source=github.com&utm_medium=referral&utm_content=harikesh409/xmeme&utm_campaign=Badge_Grade)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1b59b4a-94c3-4374-a5f6-75dd2487eeee/deploy-status)](https://app.netlify.com/sites/harikesh-xmeme/deploys)
 ![GitHub contributors](https://img.shields.io/github/contributors/harikesh409/xmeme)
 ![GitHub followers](https://img.shields.io/github/followers/harikesh409?label=Follow&style=flat)
