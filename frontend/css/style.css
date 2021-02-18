@@ -8,11 +8,12 @@
   height: 320px;
 }
 
-.edit-meme, .delete-meme {
+.edit-meme, 
+.delete-meme {
   cursor: pointer;
 }
 
-.social-icons a{
+.social-icons a {
   margin-left: 2px;
   margin-right: 2px;
 }
