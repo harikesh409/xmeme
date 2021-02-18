@@ -1,5 +1,12 @@
 # XMeme
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1b59b4a-94c3-4374-a5f6-75dd2487eeee/deploy-status)](https://app.netlify.com/sites/harikesh-xmeme/deploys)
+![GitHub contributors](https://img.shields.io/github/contributors/harikesh409/xmeme)
+![GitHub followers](https://img.shields.io/github/followers/harikesh409?label=Follow&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/harikesh409/xmeme?label=Fork&style=flat)
+![GitHub Repo stars](https://img.shields.io/github/stars/harikesh409/xmeme?label=Star)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/harikesh409/xmeme)
+![GitHub language count](https://img.shields.io/github/languages/count/harikesh409/xmeme)
+![GitHub top language](https://img.shields.io/github/languages/top/harikesh409/xmeme)
 
 Meme Stream Page where users can post memes by providing their name, a caption for the meme and the URL for the meme image as input.
 ## Technology Stack
