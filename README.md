@@ -99,8 +99,8 @@ curl --location --request DELETE 'http://localhost:8081/memes/1'
 [http://localhost:8081/swagger-ui/](http://localhost:8081/swagger-ui/ "http://localhost:8081/swagger-ui/")
 
 ## Running FrontEnd
-1. Goto `\p-harikesh409-me_buildout_xmeme\frontend` and open `index.html`.
-2. To change the backend URL update the `host` variable in `script.js` file located at `\p-harikesh409-me_buildout_xmeme\frontend\js`.
+1. Goto `\xmeme\frontend` and open `index.html`.
+2. To change the backend URL update the `host` variable in `script.js` file located at `\xmeme\frontend\js`.
 ```js
 // Change this value to update the backend URL
 const host = "http://localhost:8081";
